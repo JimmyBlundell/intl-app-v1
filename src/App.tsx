@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { FormattedMessage, FormattedDate } from "react-intl";
+import { Context } from "./components/Wrapper";
 
 interface AppProps {
   date: number
 }
 
 function App(props: AppProps) {
+  const context = useContext(Context);
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <select value={context.locale} onChange={context.selectLang}>
+          <option value={"en-US"}>English</option>
+          <option value={"es-MX"}>Spanish</option>
+        </select>
         <p>
           <FormattedMessage
               id={"app.header"}
