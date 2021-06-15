@@ -3,11 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { IntlProvider } from "react-intl"
+import Spanish from "./i18n/es-MX.json";
+import English from "./i18n/en-US.json";
+
+const local = navigator.language;
+
+let lang;
+if (local === "en-US") {
+    lang = English;
+} else {
+    lang = Spanish;
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <IntlProvider locale={"es-MX"} messages={Spanish}>
+    <App date={Date.now()} />
+  </IntlProvider>,
   document.getElementById('root')
 );
 

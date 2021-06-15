@@ -1,0 +1,5 @@
+{
+  "app.header": "Edite <code>{fileName}</code> y guárdelo para volver a cargar.",
+  "app.content": "¡Aprende internacionalización con React!",
+  "app.channel.plug": "Ejemplo de código presentado por {channelName}"
+}
